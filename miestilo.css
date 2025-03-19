@@ -4,8 +4,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+
 }
 
+/* Color de fondo de la página y color de texto principal */    
 body {
     background-color: white;
     color: #333;
@@ -15,7 +18,10 @@ body {
 header {
     background-color: #333;
     padding: 30px;
+    position: sticky;
+    top: 0;
 }
+
 
 /*Le sacamos el punto de las listas con el lists style y usamos flex para centrarlo*/
 nav ul {
@@ -29,6 +35,8 @@ nav ul li {
     margin: 0 15px;
 }
 
+
+/* Usamos el text-decoration para eliminar el color azul de los enlaces */
 nav ul li a {
     text-decoration: none;
     color: white;
@@ -45,13 +53,14 @@ nav ul li a {
 /*Creo un id para poder poner los textos en columna y que la imgen no se vea afectada, sino pondria tambien la imagen en columna y el texto no se situaria al lado*/
 #columna {
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 /*Altura y ancho de imagen y margen de abajo*/
 .perfil img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 /*Tamaño de letra y margen inferior*/
@@ -68,7 +77,7 @@ nav ul li a {
     margin-bottom: 3px;
 }
 
-
+/* Sección 'Sobre mí', con ancho máximo y centrado */
 .sobre-mi {
     max-width: 95vw;
     margin: 40px auto;
@@ -79,11 +88,13 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Alineamos el título */
 .sobre-mi h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Contenedor con distribución en Grid */
 .contenedor{
     display: grid;
     grid-template-columns: 15% 15% 15% 15% 15% 15% 10%;
@@ -93,7 +104,7 @@ nav ul li a {
 }
 
 
-
+/* Estilización de las cajas */
 .caja {
     background: white;
     padding: 20px;
@@ -101,19 +112,26 @@ nav ul li a {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+
+/* Bordes redondeados en imágenes dentro de las cajas */
 .caja img {
     border-radius: 8px;
 }
 
+
+/* Tamaño del título dentro de la caja */
 .caja h3 {
     margin-bottom: 10px;
     font-size: 18px;
 }
 
+
+/* Aplicar un pequeño padding a listas */
 ul {
     padding-left: 20px;
 }
 
+/* Distribución de secciones dentro del grid */
 .habilidades{
     grid-column: 1/3;
     grid-row: 1/1;
@@ -136,6 +154,15 @@ ul {
     justify-content: center;
 }
 
+
+/* Tamaño del logo */
+.contenedor-logo img {
+    height: 15vh;
+    width: 20vh;
+    display: flex;
+    align-items: center;
+}
+
 .soft-skills{
     grid-column: 2/5;
     grid-row: 3/3;
@@ -146,8 +173,9 @@ ul {
     grid-row: 3/3;
 }
 
-.contenedor2 {
 
+/* Segunda estructura en Grid */
+.contenedor2 {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 25% 30% 30%;
@@ -155,10 +183,23 @@ ul {
     justify-content: center;
 }
 
+/* Sección de proyectos */
 .proyectos-destacados {
     text-align: center;
 }
 
+/* Imágenes de los proyectos */
+.proyectos-destacados img {
+    height: 25vh;
+    width: 45vh;
+    margin-bottom: 20px;
+}
+
+.proyectos-destacados h3 {
+    margin-bottom: 20px;
+}
+
+/* Bloques con fondo blanco y borde */
 .bloque {
     background: white;
     padding: 20px;
@@ -167,13 +208,14 @@ ul {
     margin-top: 5vh;
     border: 1px rgb(201, 201, 201) solid;
     text-align: center;
+    overflow: auto;
 }   
 
 
+/* Bordes redondeados para imágenes dentro de los bloques */
 .bloque img {
     border-radius: 8px;
 }
-
 
 /*Le añado un padding top porque hay un Colapso de márgenes, entonces no me dejaba aplicar un margin top al h2*/
 .idiomas {
@@ -187,6 +229,7 @@ ul {
     margin: 20px;
 }
 
+/* Tabla centrada */
 table {
     width: 50%;
     margin: 0 auto;
@@ -211,6 +254,7 @@ td {
     font-weight: bold;
 }
 
+/* Sección de experiencia */
 .experiencia {
     display: flex;
     flex-direction: column;
@@ -218,11 +262,13 @@ td {
     margin: 20px;
 }
 
-.experiencia h2 {
+.experiencia > h2 {
     font-size:22px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-
+/* Subtítulos en experiencia */
 .experiencia h3 {
     font-size: 16px;
     color: gray;
@@ -232,11 +278,14 @@ td {
 
 }
 
+
 .experiencia p {
     font-style: bold;
     color: black;
 }
 
+
+/* Contenedores en experiencia */
 .cajas {
     background: white;
     padding: 30px;
@@ -246,3 +295,104 @@ td {
 } 
 
 
+/* Sección de contacto */   
+.contacto {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.contacto h2 {
+    padding: 30px;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+}
+
+.contacto form input {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contacto form textarea {
+    border-radius: 5px;
+}
+
+/* Botón de contacto */
+.contacto button {
+    background-color: black;
+    color:#f5f0e6;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+.contacto button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Pie de página */
+footer{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*Media Queries para móviles*/
+@media screen and (max-width: 768px) {
+    header {
+        padding: 15px; /* Reduce el padding del header */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menú en columna */
+        align-items: center;
+    }
+
+    .perfil {
+        flex-direction: column; /* Imagen y texto en columna */
+        align-items: center;
+        text-align: center;
+    }
+
+    .perfil img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr; /* Todo en una columna */
+        text-align: center;
+    }
+
+    .contenedor2 {
+        grid-template-columns: 1fr; /* Proyectos en una sola columna */
+    }
+
+    .bloque {
+        height: auto; /* Evita que los bloques sean demasiado grandes */
+    }
+
+    table {
+        width: 90%; /* Hace la tabla más accesible */
+    }
+}
