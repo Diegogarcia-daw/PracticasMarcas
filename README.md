@@ -7,4 +7,4 @@ Características:
 -Formulario de contacto funcional.
 
 Como ver el portafolio:
-https://diegogarciaportafoliopersonal.netlify.app
+https://portafoliopersonaldiegogarcia.netlify.app/
